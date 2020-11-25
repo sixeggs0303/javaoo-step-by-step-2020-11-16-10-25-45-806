@@ -35,4 +35,8 @@ public class Klass {
     public void appendMember(Student student) {
         this.students.add(student);
     }
+
+    public boolean isIn(Student student) {
+        return this.students.contains(student);
+    }
 }

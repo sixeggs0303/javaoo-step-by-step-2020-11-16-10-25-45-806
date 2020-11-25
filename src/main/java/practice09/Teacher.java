@@ -37,6 +37,9 @@ public class Teacher extends Person {
     }
 
     public boolean isTeaching(Student student) {
-        return this.getClasses().contains(student.getKlass());
+        for (Klass klass : getClasses()) {
+            if (klass.isIn(student)) return true;
+        }
+        return false;
     }
 }
