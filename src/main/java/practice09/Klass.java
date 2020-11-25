@@ -25,7 +25,7 @@ public class Klass {
     }
 
     public void assignLeader(Student student) {
-        if (!this.students.contains(student)) {
+        if (!isIn(student)) {
             System.out.print("It is not one of us.\n");
             return;
         }
