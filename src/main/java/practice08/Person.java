@@ -29,7 +29,11 @@ public class Person {
 
     @Override
     public boolean equals(Object obj) {
-        Person person = (Person) obj;
-        return obj != null && person.getId() == this.getId();
+        if (obj instanceof practice10.Person) {
+            practice10.Person person = (practice10.Person) obj;
+            return person.getId() == this.getId();
+        } else {
+            return super.equals(obj);
+        }
     }
 }

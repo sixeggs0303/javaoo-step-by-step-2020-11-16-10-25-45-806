@@ -1,6 +1,6 @@
 package practice05;
 
-public class Teacher extends Person{
+public class Teacher extends Person {
     private Integer klass;
 
     public Teacher(String name, int age) {
@@ -13,7 +13,7 @@ public class Teacher extends Person{
         this.klass = klass;
     }
 
-    public Integer getKlass(){
+    public Integer getKlass() {
         return this.klass;
     }
 

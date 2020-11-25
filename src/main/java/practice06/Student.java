@@ -1,6 +1,6 @@
 package practice06;
 
-public class Student extends Person{
+public class Student extends Person {
     private Klass klass;
 
     public Student(String name, int age, Klass klass) {
