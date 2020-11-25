@@ -23,12 +23,12 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        String joinClasses = (getClasses().size() == 0 ? "No Class" : "Class " + joinClasses());
+        String joinClasses = (getClasses().size() == 0 ? "No Class" : joinClassesNumberToString());
         return super.introduce() + " I am a Teacher. I teach " + joinClasses + ".";
     }
 
-    private String joinClasses() {
-        return getClasses().stream().map(Klass::getNumber).map(Objects::toString).collect(Collectors.joining(", "));
+    private String joinClassesNumberToString() {
+        return "Class " + getClasses().stream().map(Klass::getNumber).map(Objects::toString).collect(Collectors.joining(", "));
     }
 
     public String introduceWith(Student student) {
