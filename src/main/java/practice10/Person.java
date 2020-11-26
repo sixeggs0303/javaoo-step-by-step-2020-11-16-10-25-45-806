@@ -24,7 +24,7 @@ public class Person {
     }
 
     public String introduce() {
-        return "My name is " + getName() + ". I am " + getAge() + " years old.";
+        return "My name is " + this.getName() + ". I am " + this.getAge() + " years old.";
     }
 
     @Override
@@ -32,8 +32,7 @@ public class Person {
         if (obj instanceof Person) {
             Person person = (Person) obj;
             return person.getId() == this.getId();
-        } else {
-            return super.equals(obj);
         }
+        return super.equals(obj);
     }
 }

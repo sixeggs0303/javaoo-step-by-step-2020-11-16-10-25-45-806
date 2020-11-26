@@ -17,10 +17,10 @@ public class Student extends Person {
     public String introduce() {
         String result = super.introduce() + " I am a Student.";
 
-        if (this.getKlass().getLeader() != null && this.getKlass().getLeader().equals(this)) {
+        if (this.equals(this.klass.getLeader())) {
             return result + " I am Leader of " + this.getKlass().getDisplayName() + ".";
-        } else {
-            return result + " I am at " + this.getKlass().getDisplayName() + ".";
         }
+        
+        return result + " I am at " + this.getKlass().getDisplayName() + ".";
     }
 }

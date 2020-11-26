@@ -26,12 +26,14 @@ public class Klass {
     }
 
     public void assignLeader(Student student) {
-        if (!isIn(student)) {
+        if (!this.isIn(student)) {
             System.out.print("It is not one of us.\n");
             return;
         }
         this.leader = student;
-        if (getTeacher() != null) getTeacher().notifyBecomeMonitor(this, student);
+        if (this.getTeacher() != null) {
+            this.getTeacher().notifyBecomeMonitor(this.getDisplayName(), student);
+        }
     }
 
     public Teacher getTeacher() {
@@ -44,7 +46,9 @@ public class Klass {
 
     public void appendMember(Student student) {
         this.students.add(student);
-        if (getTeacher() != null) getTeacher().notifyJoinClass(this, student);
+        if (this.getTeacher() != null) {
+            this.getTeacher().notifyJoinClass(this.getDisplayName(), student);
+        }
     }
 
     public boolean isIn(Student student) {

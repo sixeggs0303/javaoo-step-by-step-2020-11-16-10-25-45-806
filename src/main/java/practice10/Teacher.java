@@ -15,10 +15,7 @@ public class Teacher extends Person {
     public Teacher(int id, String name, int age, LinkedList<Klass> classes) {
         super(id, name, age);
         this.classes = classes;
-
-        for (Klass klass : classes) {
-            klass.setTeacher(this);
-        }
+        classes.forEach(klass -> klass.setTeacher(this));
     }
 
     public LinkedList<Klass> getClasses() {
@@ -41,17 +38,14 @@ public class Teacher extends Person {
     }
 
     public boolean isTeaching(Student student) {
-        for (Klass klass : getClasses()) {
-            if (klass.isIn(student)) return true;
-        }
-        return false;
+        return this.getClasses().stream().anyMatch(klass -> klass.isIn(student));
     }
 
-    public void notifyJoinClass(Klass klass, Student student) {
-        System.out.print("I am " + getName() + ". I know " + student.getName() + " has joined " + klass.getDisplayName() + ".\n");
+    public void notifyJoinClass(String className, Student student) {
+        System.out.print("I am " + this.getName() + ". I know " + student.getName() + " has joined " + className + ".\n");
     }
 
-    public void notifyBecomeMonitor(Klass klass, Student student) {
-        System.out.print("I am " + getName() + ". I know " + student.getName() + " become Leader of " + klass.getDisplayName() + ".\n");
+    public void notifyBecomeMonitor(String className, Student student) {
+        System.out.print("I am " + this.getName() + ". I know " + student.getName() + " become Leader of " + className + ".\n");
     }
 }
