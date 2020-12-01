@@ -41,11 +41,11 @@ public class Teacher extends Person {
         return this.getClasses().stream().anyMatch(klass -> klass.isIn(student));
     }
 
-    public void notifyJoinClass(String className, Student student) {
-        System.out.print("I am " + this.getName() + ". I know " + student.getName() + " has joined " + className + ".\n");
+    public void notifyJoinClass(String className, String studentName) {
+        System.out.print("I am " + this.getName() + ". I know " + studentName + " has joined " + className + ".\n");
     }
 
-    public void notifyBecomeMonitor(String className, Student student) {
-        System.out.print("I am " + this.getName() + ". I know " + student.getName() + " become Leader of " + className + ".\n");
+    public void notifyBecomeMonitor(String className, String studentName) {
+        System.out.print("I am " + this.getName() + ". I know " + studentName + " become Leader of " + className + ".\n");
     }
 }

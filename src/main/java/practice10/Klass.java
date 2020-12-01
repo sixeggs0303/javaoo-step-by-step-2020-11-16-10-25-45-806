@@ -32,7 +32,7 @@ public class Klass {
         }
         this.leader = student;
         if (this.getTeacher() != null) {
-            this.getTeacher().notifyBecomeMonitor(this.getDisplayName(), student);
+            this.getTeacher().notifyBecomeMonitor(this.getDisplayName(), student.getName());
         }
     }
 
@@ -47,7 +47,7 @@ public class Klass {
     public void appendMember(Student student) {
         this.students.add(student);
         if (this.getTeacher() != null) {
-            this.getTeacher().notifyJoinClass(this.getDisplayName(), student);
+            this.getTeacher().notifyJoinClass(this.getDisplayName(), student.getName());
         }
     }
 
